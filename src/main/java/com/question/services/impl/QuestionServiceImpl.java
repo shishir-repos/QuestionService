@@ -20,19 +20,19 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public Question create(Question question) {
 		// TODO Auto-generated method stub
-		return null;
+		return questionRepository.save(question);
 	}
 
 	@Override
 	public List<Question> getAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return questionRepository.findAll();
 	}
 
 	@Override
-	public Question getById() {
+	public Question getById(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return questionRepository.findById(id).orElseThrow(() -> new RuntimeException());
 	}
 
 }
