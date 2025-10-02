@@ -35,4 +35,10 @@ public class QuestionServiceImpl implements QuestionService {
 		return questionRepository.findById(id).orElseThrow(() -> new RuntimeException());
 	}
 
+	@Override
+	public List<Question> getQuestionOfQuiz(long quizId) {
+		// TODO Auto-generated method stub
+		return questionRepository.findByQuizId(quizId);
+	}
+
 }
